@@ -1,0 +1,20 @@
+platform :ios, '8.2'
+source 'https://github.com/CocoaPods/Specs.git'
+inhibit_all_warnings!
+
+pod 'JMJParametricAnimation', '~> 1.0'
+pod 'FLEX', '~> 2.0.2'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'HockeySDK', '~> 3.6.2'
+pod 'CrashlyticsFramework', '~> 2.2.10'
+pod 'SWRevealViewController', '~> 2.3.0'
+pod 'TPKeyboardAvoiding', '~> 1.2.6'
+pod 'Localytics',  '~> 3.1.1'
+
+#pod 'JMJParametricAnimation', '~> 1.0'
+
+
+
+
+
+
