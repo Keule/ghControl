@@ -1,0 +1,10 @@
+
+
+The following steps have been done for the initial setup of the rapsberry pi.
+
+ssh pi@192.168.0.29 # Password raspberry
+sudo -s
+apt-get install vim
+vim /etc/wpa_supplicant/wpa_supplicant.conf
+apt-get install pyserial
+
