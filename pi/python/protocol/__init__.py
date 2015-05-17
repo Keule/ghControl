@@ -11,7 +11,7 @@ from protocol.ActorListAnswer import ActorListAnswer, ActorListAnswerTest
 from threading import Lock
 import unittest
 
-__all__ = [ NoOpQuery, StatusQuery ]
+__all__ = [ NoOpQuery, StatusQuery, ActorListQuery, ActorUpdateQuery, StatusAnswer, ActorListAnswer ]
 
 pdus = [
     NoOpQuery,          # PduId = 0
