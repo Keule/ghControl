@@ -32,7 +32,6 @@
 		D1EE63921B090A1900DB6E3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63121B090A1900DB6E3B /* AppDelegate.m */; };
 		D1EE63931B090A1900DB6E3B /* Localizeable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1EE63141B090A1900DB6E3B /* Localizeable.strings */; };
 		D1EE63941B090A1900DB6E3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1EE63161B090A1900DB6E3B /* Images.xcassets */; };
-		D1EE63951B090A1900DB6E3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1EE63171B090A1900DB6E3B /* Info.plist */; };
 		D1EE63961B090A1900DB6E3B /* FMTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE631C1B090A1900DB6E3B /* FMTextViewController.m */; };
 		D1EE63971B090A1900DB6E3B /* FMAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE631F1B090A1900DB6E3B /* FMAlertViewHelper.m */; };
 		D1EE63981B090A1900DB6E3B /* FMColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63211B090A1900DB6E3B /* FMColorHelper.m */; };
@@ -84,6 +83,16 @@
 		D1EE63C61B090A1900DB6E3B /* FMBezierViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63851B090A1900DB6E3B /* FMBezierViewGenerator.m */; };
 		D1EE63C71B090A1900DB6E3B /* CHLBezierViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63871B090A1900DB6E3B /* CHLBezierViewGenerator.m */; };
 		D1EE63C81B090A1900DB6E3B /* CHLControlsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63891B090A1900DB6E3B /* CHLControlsGenerator.m */; };
+		D1EE63CB1B090F7A00DB6E3B /* CHLTaskGetSonsorData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63CA1B090F7A00DB6E3B /* CHLTaskGetSonsorData.m */; };
+		D1EE63CE1B090F8E00DB6E3B /* CHLTaskGetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63CD1B090F8E00DB6E3B /* CHLTaskGetConfig.m */; };
+		D1EE63D41B0911AD00DB6E3B /* CHLDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63D31B0911AD00DB6E3B /* CHLDebugViewController.m */; };
+		D1EE63D71B0911BD00DB6E3B /* CHLDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63D61B0911BD00DB6E3B /* CHLDebugView.m */; };
+		D1EE63DB1B0911F700DB6E3B /* CHLStateListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63DA1B0911F700DB6E3B /* CHLStateListView.m */; };
+		D1EE63DE1B09120300DB6E3B /* CHLSettingsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63DD1B09120300DB6E3B /* CHLSettingsListView.m */; };
+		D1EE63E11B09120F00DB6E3B /* CHLStateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63E01B09120F00DB6E3B /* CHLStateListViewController.m */; };
+		D1EE63E41B09121D00DB6E3B /* CHLSettingsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63E31B09121D00DB6E3B /* CHLSettingsListViewController.m */; };
+		D1EE63E71B09139E00DB6E3B /* CHLStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63E61B09139E00DB6E3B /* CHLStateCell.m */; };
+		D1EE63EA1B0913AC00DB6E3B /* CHLSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EE63E91B0913AC00DB6E3B /* CHLSettingCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +222,26 @@
 		D1EE63881B090A1900DB6E3B /* CHLControlsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLControlsGenerator.h; sourceTree = "<group>"; };
 		D1EE63891B090A1900DB6E3B /* CHLControlsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLControlsGenerator.m; sourceTree = "<group>"; };
 		D1EE638A1B090A1900DB6E3B /* CHLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLConstants.h; sourceTree = "<group>"; };
+		D1EE63C91B090F7A00DB6E3B /* CHLTaskGetSonsorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLTaskGetSonsorData.h; sourceTree = "<group>"; };
+		D1EE63CA1B090F7A00DB6E3B /* CHLTaskGetSonsorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLTaskGetSonsorData.m; sourceTree = "<group>"; };
+		D1EE63CC1B090F8E00DB6E3B /* CHLTaskGetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLTaskGetConfig.h; sourceTree = "<group>"; };
+		D1EE63CD1B090F8E00DB6E3B /* CHLTaskGetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLTaskGetConfig.m; sourceTree = "<group>"; };
+		D1EE63D21B0911AD00DB6E3B /* CHLDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLDebugViewController.h; sourceTree = "<group>"; };
+		D1EE63D31B0911AD00DB6E3B /* CHLDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLDebugViewController.m; sourceTree = "<group>"; };
+		D1EE63D51B0911BD00DB6E3B /* CHLDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLDebugView.h; sourceTree = "<group>"; };
+		D1EE63D61B0911BD00DB6E3B /* CHLDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLDebugView.m; sourceTree = "<group>"; };
+		D1EE63D91B0911F700DB6E3B /* CHLStateListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLStateListView.h; sourceTree = "<group>"; };
+		D1EE63DA1B0911F700DB6E3B /* CHLStateListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLStateListView.m; sourceTree = "<group>"; };
+		D1EE63DC1B09120300DB6E3B /* CHLSettingsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLSettingsListView.h; sourceTree = "<group>"; };
+		D1EE63DD1B09120300DB6E3B /* CHLSettingsListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLSettingsListView.m; sourceTree = "<group>"; };
+		D1EE63DF1B09120F00DB6E3B /* CHLStateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLStateListViewController.h; sourceTree = "<group>"; };
+		D1EE63E01B09120F00DB6E3B /* CHLStateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLStateListViewController.m; sourceTree = "<group>"; };
+		D1EE63E21B09121D00DB6E3B /* CHLSettingsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLSettingsListViewController.h; sourceTree = "<group>"; };
+		D1EE63E31B09121D00DB6E3B /* CHLSettingsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLSettingsListViewController.m; sourceTree = "<group>"; };
+		D1EE63E51B09139E00DB6E3B /* CHLStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLStateCell.h; sourceTree = "<group>"; };
+		D1EE63E61B09139E00DB6E3B /* CHLStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLStateCell.m; sourceTree = "<group>"; };
+		D1EE63E81B0913AC00DB6E3B /* CHLSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLSettingCell.h; sourceTree = "<group>"; };
+		D1EE63E91B0913AC00DB6E3B /* CHLSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLSettingCell.m; sourceTree = "<group>"; };
 		D9A7E7CC06D250B3C8852371 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +307,10 @@
 			isa = PBXGroup;
 			children = (
 				D1EE63011B090A1900DB6E3B /* base */,
+				D1EE63C91B090F7A00DB6E3B /* CHLTaskGetSonsorData.h */,
+				D1EE63CA1B090F7A00DB6E3B /* CHLTaskGetSonsorData.m */,
+				D1EE63CC1B090F8E00DB6E3B /* CHLTaskGetConfig.h */,
+				D1EE63CD1B090F8E00DB6E3B /* CHLTaskGetConfig.m */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -392,6 +425,9 @@
 		D1EE63471B090A1900DB6E3B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				D1EE63D81B0911EC00DB6E3B /* listStates */,
+				D1EE63D01B09118800DB6E3B /* listSettings */,
+				D1EE63D11B09118800DB6E3B /* test */,
 				D1EE63481B090A1900DB6E3B /* controls */,
 			);
 			path = ui;
@@ -504,6 +540,43 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		D1EE63D01B09118800DB6E3B /* listSettings */ = {
+			isa = PBXGroup;
+			children = (
+				D1EE63DC1B09120300DB6E3B /* CHLSettingsListView.h */,
+				D1EE63DD1B09120300DB6E3B /* CHLSettingsListView.m */,
+				D1EE63E21B09121D00DB6E3B /* CHLSettingsListViewController.h */,
+				D1EE63E31B09121D00DB6E3B /* CHLSettingsListViewController.m */,
+				D1EE63E81B0913AC00DB6E3B /* CHLSettingCell.h */,
+				D1EE63E91B0913AC00DB6E3B /* CHLSettingCell.m */,
+			);
+			path = listSettings;
+			sourceTree = "<group>";
+		};
+		D1EE63D11B09118800DB6E3B /* test */ = {
+			isa = PBXGroup;
+			children = (
+				D1EE63D21B0911AD00DB6E3B /* CHLDebugViewController.h */,
+				D1EE63D31B0911AD00DB6E3B /* CHLDebugViewController.m */,
+				D1EE63D51B0911BD00DB6E3B /* CHLDebugView.h */,
+				D1EE63D61B0911BD00DB6E3B /* CHLDebugView.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		D1EE63D81B0911EC00DB6E3B /* listStates */ = {
+			isa = PBXGroup;
+			children = (
+				D1EE63D91B0911F700DB6E3B /* CHLStateListView.h */,
+				D1EE63DA1B0911F700DB6E3B /* CHLStateListView.m */,
+				D1EE63DF1B09120F00DB6E3B /* CHLStateListViewController.h */,
+				D1EE63E01B09120F00DB6E3B /* CHLStateListViewController.m */,
+				D1EE63E51B09139E00DB6E3B /* CHLStateCell.h */,
+				D1EE63E61B09139E00DB6E3B /* CHLStateCell.m */,
+			);
+			path = listStates;
+			sourceTree = "<group>";
+		};
 		DC0EC47D6775592C98E80838 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,7 +651,6 @@
 			files = (
 				D1EE63931B090A1900DB6E3B /* Localizeable.strings in Resources */,
 				D1EE63941B090A1900DB6E3B /* Images.xcassets in Resources */,
-				D1EE63951B090A1900DB6E3B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +719,7 @@
 				D1EE63BB1B090A1900DB6E3B /* FMInputDateViewController.m in Sources */,
 				D1EE63981B090A1900DB6E3B /* FMColorHelper.m in Sources */,
 				D1EE63A31B090A1900DB6E3B /* FMDatabaseManager.m in Sources */,
+				D1EE63D71B0911BD00DB6E3B /* CHLDebugView.m in Sources */,
 				D1EE63B01B090A1900DB6E3B /* CHLView.m in Sources */,
 				D1EE63A11B090A1900DB6E3B /* FMVibrationHelper.m in Sources */,
 				D1EE638F1B090A1900DB6E3B /* FMJSONSerialization.m in Sources */,
@@ -655,9 +728,12 @@
 				D1EE63AB1B090A1900DB6E3B /* FMLazyLoadingImageView.m in Sources */,
 				D1EE63A81B090A1900DB6E3B /* FMDownloadManager.m in Sources */,
 				D1EE639B1B090A1900DB6E3B /* FMImageHelper.m in Sources */,
+				D1EE63E71B09139E00DB6E3B /* CHLStateCell.m in Sources */,
 				D1EE639C1B090A1900DB6E3B /* FMMailHelper.m in Sources */,
+				D1EE63DE1B09120300DB6E3B /* CHLSettingsListView.m in Sources */,
 				D1EE63C11B090A1900DB6E3B /* FMInputViewController.m in Sources */,
 				D1EE63901B090A1900DB6E3B /* NSArray+NullReplacement.m in Sources */,
+				D1EE63E41B09121D00DB6E3B /* CHLSettingsListViewController.m in Sources */,
 				D1EE63BE1B090A1900DB6E3B /* FMInputNumberViewController.m in Sources */,
 				D1EE639D1B090A1900DB6E3B /* FMPhoneHelper.m in Sources */,
 				D1EE63B41B090A1900DB6E3B /* UIView+Frame.m in Sources */,
@@ -665,6 +741,7 @@
 				D1EE63911B090A1900DB6E3B /* NSDictionary+NullReplacement.m in Sources */,
 				D1EE63C21B090A1900DB6E3B /* FMInputViewGroupHeader.m in Sources */,
 				D1EE63B21B090A1900DB6E3B /* CAMediaTimingFunction+AdditionalEquations.m in Sources */,
+				D1EE63D41B0911AD00DB6E3B /* CHLDebugViewController.m in Sources */,
 				D1EE63A41B090A1900DB6E3B /* FMDataStore.m in Sources */,
 				D1EE63C71B090A1900DB6E3B /* CHLBezierViewGenerator.m in Sources */,
 				D1EE63AA1B090A1900DB6E3B /* CHLWorkflowManager.m in Sources */,
@@ -688,10 +765,15 @@
 				D1EE638C1B090A1900DB6E3B /* FMApiTaskResponse.m in Sources */,
 				D1EE63961B090A1900DB6E3B /* FMTextViewController.m in Sources */,
 				D1EE63C51B090A1900DB6E3B /* FMBezierAnimationView.m in Sources */,
+				D1EE63EA1B0913AC00DB6E3B /* CHLSettingCell.m in Sources */,
 				D1EE63B71B090A1900DB6E3B /* FMInputCellObject.m in Sources */,
 				D1EE63A21B090A1900DB6E3B /* main.m in Sources */,
+				D1EE63E11B09120F00DB6E3B /* CHLStateListViewController.m in Sources */,
 				D1EE63A51B090A1900DB6E3B /* FMManagerLayer.m in Sources */,
 				D1EE63AE1B090A1900DB6E3B /* FMTableViewHeader.m in Sources */,
+				D1EE63CB1B090F7A00DB6E3B /* CHLTaskGetSonsorData.m in Sources */,
+				D1EE63DB1B0911F700DB6E3B /* CHLStateListView.m in Sources */,
+				D1EE63CE1B090F8E00DB6E3B /* CHLTaskGetConfig.m in Sources */,
 				D1EE63AD1B090A1900DB6E3B /* FMTableView.m in Sources */,
 				D1EE639F1B090A1900DB6E3B /* FMSystemSoundHelper.m in Sources */,
 			);

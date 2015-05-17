@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMApiTaskResponse.h"
 
-typedef void (^HLApiTaskFailBlock)(NSError* error);
+typedef void (^FMApiTaskFailBlock)(NSError* error);
 
 @class FMCredentials;
 

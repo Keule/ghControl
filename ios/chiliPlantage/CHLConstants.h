@@ -1,5 +1,5 @@
 #define API_TOKEN @""
-
+#define API_URL @"https://chili.fluidmobile.de"
 #define COLOR_APP_TINT_COLOR [UIColor redColor]
 #define COLOR_TEXT [UIColor greenColor];
 #define COLOR_BACKGROUND [UIColor whiteColor]

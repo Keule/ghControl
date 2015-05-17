@@ -5,7 +5,8 @@
 
 #import "CHLWorkflowManager.h"
 
-#import "FMTextViewController.h"
+#import "CHLDebugViewController.h"
+#import "FMNavigationController.h"
 
 @implementation CHLWorkflowManager
 
@@ -20,6 +21,6 @@
 
 -(UIViewController *)initialViewController{
 
-    return [FMTextViewController new];
+    return [[FMNavigationController alloc] initWithRootViewController:[CHLDebugViewController new]];
 }
 @end
