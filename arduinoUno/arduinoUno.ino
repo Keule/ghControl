@@ -27,6 +27,7 @@ void setup() {
   pinMode(humidDigital, INPUT);  
   Serial.begin(9600);  
   wdt_enable(WDTO_8S);
+
 }
 
 void loop() {
@@ -55,7 +56,7 @@ String loadInputStream(){
           return (inputString);
         }
         else{
-           printCommandBufferUnderflow();
+           printErrorCommandBufferUnderflow();
         }
         inputString = "";        
         return "";
@@ -66,24 +67,34 @@ String loadInputStream(){
       }      
     }  
     if (inputString.length() >= 20){
-      printCommandBufferOverflow();  
+      printErrorCommandBufferOverflow();  
       inputString = "";      
     }  
     return "";
 }
 
-void printCommandBufferOverflow(){
-    Serial.print(24);
+void printErrorCommandBufferOverflow(){
+  printError("data too error");  
+}
+
+void printErrorCommandBufferUnderflow(){
+  printError("data too short");
+}
+
+void printErrorActorNotFound(){
+  printError("actor id not found");
+
+}
+
+void printErrorUnknownCommand(){
+  printError("unknown command");  
+}
+
+void printError(String errorString){
+    Serial.print(errorString);
     Serial.write(eof);
 }
 
-void printCommandBufferUnderflow(){
-  printCommandBufferOverflow();
-}
-
-void printActorNotFound(){
-  printCommandBufferOverflow();  
-}
 
 void executeCommandID(int commandID, String information){
   wdt_reset();  
@@ -107,6 +118,9 @@ void executeCommandID(int commandID, String information){
     int value = commandIDForString(information,8,9,10);
      executeCommandSetActor(actorID, value);
   }   
+  else{
+    printErrorUnknownCommand();
+  }
 }
 
 void executeCommandListSensor(){
@@ -150,7 +164,7 @@ void executeCommandSetActor(int actorID, int value){
      }
   }
   else{
-    printActorNotFound();
+    printErrorActorNotFound();
     return;
   }
     
