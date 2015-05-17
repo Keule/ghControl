@@ -22,6 +22,18 @@ class QueryPdu(metaclass=ABCMeta):
     def getPduId(self):
         pass
 
+    def assertByteValue(self, value):
+        if value is None:
+            raise QueryPduException("value has to be set in the derived class") 
+        elif not isinstance(value, int):
+            raise QueryPduException("value has to be an integer") 
+        elif value < 0:
+            raise QueryPduException("value has to be positive") 
+        elif value > 255:
+            raise QueryPduException("value should only be 8 bit") 
+        else:
+            return value
+
     def serialize(self):
         """
             Generates the data-string to send to the Arduino.
@@ -29,18 +41,8 @@ class QueryPdu(metaclass=ABCMeta):
             End Of Transmission Character (ASCII character 4)
         """
         pdu_id = self.getPduId()
-        if pdu_id is None:
-            raise QueryPduException("pdu_id has to be set in the derived class") 
-        elif not isinstance(pdu_id, int):
-            raise QueryPduException("pdu_id has to be an integer") 
-        elif pdu_id < 0:
-            raise QueryPduException("pdu_id has to be positive") 
-        elif pdu_id > 255:
-            # The Arduino should be able to evaluate PDUs with a higher pdu_id
-            # but we should not sent one
-            raise QueryPduException("pdu_id should only be 8 bit") 
-        else:
-            return "{0:03d}".format(pdu_id) + QueryPdu.EOT
+        self.assertByteValue(pdu_id)
+        return "{0:03d}\n".format(pdu_id) + QueryPdu.EOT
 
 
 # -------------------------------------------------------------------------------
@@ -82,11 +84,11 @@ class QueryPduTest(unittest.TestCase):
                 return self.pdu_id
 
         queryPdu = DummyQueryPdu(1)
-        assert "001\004" == queryPdu.serialize(), "serializing pdu failed: 1" 
+        assert "001\n" + QueryPdu.EOT == queryPdu.serialize(), "serializing pdu failed: 1 - got: " + queryPdu.serialize()
         queryPdu = DummyQueryPdu(21)
-        assert "021\004" == queryPdu.serialize(), "serializing pdu failed: 21"
+        assert "021\n" + QueryPdu.EOT == queryPdu.serialize(), "serializing pdu failed: 21 - got: " + queryPdu.serialize()
         queryPdu = DummyQueryPdu(121)
-        assert "121\004" == queryPdu.serialize(), "serializing pdu failed: 121"
+        assert "121\n" + QueryPdu.EOT  == queryPdu.serialize(), "serializing pdu failed: 121 - got: " + queryPdu.serialize()
 
 if __name__ == "__main__":
     unittest.main()

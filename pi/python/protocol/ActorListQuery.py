@@ -4,14 +4,18 @@
 
 from protocol.QueryPdu import QueryPdu
 
-class NoOpQuery(QueryPdu):
+class ActorListQuery(QueryPdu):
     """
         Sent from Pi to Arduino.
-        Resets the Watch dog on the Arduino
+        Causes the Arduino to list all its actors.
     """
 
     def __init__(self):
         pass
 
     def getPduId(self):
-        return 0
+        return 3
+
+
+
+

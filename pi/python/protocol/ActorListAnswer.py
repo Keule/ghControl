@@ -1,8 +1,10 @@
 
 from protocol.AnswerPdu import AnswerPduException, ResetInAnswerPduException, IllegalCharInAnswerException, AnswerPdu
 import unittest
+from io import StringIO
+import csv
 
-class StatusAnswer(AnswerPdu):
+class ActorListAnswer(AnswerPdu):
     fieldnames = [ "id", "type", "value", "status" ]
 
     def __init__(self, packetString = None):
@@ -11,20 +13,20 @@ class StatusAnswer(AnswerPdu):
             self.deserialize(packetString)
 
     def getPduId(self):
-        return 2
+        return 4
 
     def getFieldNames(self):
-        return StatusAnswer.fieldnames
+        return ActorListAnswer.fieldnames
 
     def getLastPacket(self):
         return self.lastResult
 
     def __repr__(self):
-        sensors = ""
-        for sensor in self.lastResult:
-            sensors = sensors + "  <Sensor id=\"%d\" type=\"%d\" value=\"%d\" status=\"%d\" />\n" % \
+        actorss = ""
+        for actor in self.lastResult:
+            actor = actor + "  <Actor id=\"%d\" type=\"%d\" value=\"%d\" status=\"%d\" />\n" % \
                     (sensor.get("id", -1), sensor.get("type", -1), sensor.get("value", -1), sensor.get("status", -1))
-        return "<StatusAnswer>\n%s</StatusAnswer>" % sensors
+        return "<ActorListAnswer>\n%s</ActorListAnswer>" % sensors
 
 
 
@@ -32,9 +34,9 @@ class StatusAnswer(AnswerPdu):
 # Only tests and foo below this line
 #
 
-class StatusAnswerTest(unittest.TestCase):
-    def testCorrectStatusAnswer(self):
-        pdu = StatusAnswer("2\n010,020,030,440\n")
+class ActorListAnswerTest(unittest.TestCase):
+    def testCorrectActorListAnswer(self):
+        pdu = ActorListAnswer("4\n010,020,030,440\n")
         result = pdu.getLastPacket()
 
         assert result[0].get("value") == 30, "Expected value of 30" 

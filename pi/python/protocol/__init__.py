@@ -1,9 +1,12 @@
 from protocol.QueryPdu import QueryPdu, QueryPduTest
 from protocol.NoOpQuery import NoOpQuery
 from protocol.StatusQuery import StatusQuery
+from protocol.ActorListQuery import ActorListQuery
+from protocol.ActorUpdateQuery import ActorUpdateQuery, ActorUpdateQueryTest
 
 from protocol.AnswerPdu import AnswerPdu, AnswerPduTest
 from protocol.StatusAnswer import StatusAnswer, StatusAnswerTest
+from protocol.ActorListAnswer import ActorListAnswer, ActorListAnswerTest
 
 from threading import Lock
 import unittest
@@ -11,11 +14,12 @@ import unittest
 __all__ = [ NoOpQuery, StatusQuery ]
 
 pdus = [
-    NoOpQuery,      # PduId = 0
-    StatusQuery,    # PduId = 1
-    StatusAnswer    # PduId = 2
-    # Query Actors 3
-    # Send Control signal 5
+    NoOpQuery,          # PduId = 0
+    StatusQuery,        # PduId = 1
+    StatusAnswer,       # PduId = 2
+    ActorListQuery,     # Query Actors 3
+    ActorListAnswer,
+    ActorUpdateQuery    # Send Control signal 5
     ]
 
 receiveListenerMap = {}
@@ -74,16 +78,17 @@ class TestAllQueryPdus(unittest.TestCase):
     def testPduIdMapping(self):
         for i in range(0, len(pdus)):
             pdu = pdus[i]
-            #assert issubclass(pdu, QueryPdu), "%s has wrong type - expected derived from QueryPdu" % repr(pdu)
-            instance = pdu()
-            assert i == instance.getPduId(), "Wrong PDU-Mapping from %s to %d" % (repr(pdu), i)
+            assert issubclass(pdu, QueryPdu) or issubclass(pdu, AnswerPdu) , "%s has wrong type - expected derived from QueryPdu or AnswerPdu" % repr(pdu)
+            assert i == pdu.getPduId(None), "Wrong PDU-Mapping from %s to %d" % (repr(pdu), i)
 
-if __name__ == "__main__":
+def runUnitTests():
     suite = unittest.TestSuite((
             unittest.makeSuite(TestAllQueryPdus,'test'),
             unittest.makeSuite(QueryPduTest, 'test'),
             unittest.makeSuite(AnswerPduTest, 'test'),
-            unittest.makeSuite(StatusAnswerTest, 'test')
+            unittest.makeSuite(StatusAnswerTest, 'test'),
+            unittest.makeSuite(ActorListAnswerTest, 'test'),
+            unittest.makeSuite(ActorUpdateQueryTest, 'test')
         ))
 
     runner = unittest.TextTestRunner()

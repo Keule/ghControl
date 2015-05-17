@@ -1,6 +1,8 @@
 
 from abc import ABCMeta, abstractmethod
 import unittest
+from io import StringIO
+import csv
 
 class AnswerPduException(Exception):
     pass
@@ -34,9 +36,33 @@ class AnswerPdu(metaclass=ABCMeta):
     def getPduId(self):
         pass
 
-    @abstractmethod
     def deserialize(self, packetString):
-        pass
+        # TODO: Decide where to remove PDU Header
+        packetString = self.removeAndVerifyPduId(packetString)
+
+        with StringIO(packetString) as stream:
+            reader = csv.DictReader(stream, fieldnames = self.getFieldNames(), restkey="overshoot")
+            self.lastResult = [ row for row in reader]
+            for row in self.lastResult:
+                if row.get("overshoot", None) is not None:
+                    exc = AnswerPduException("To many fields to unpack in line %s of\n%s" % repr(row, packetString))
+                    self.raiseOnError(exc)
+                    raise exc
+                for key,value in row.items():
+                    if value is None:
+                        exc = AnswerPduException("There where to view columns to unpack in line %s when unpacking\n%s" % (repr(row), packetString))
+                        self.raiseOnError(exc)
+                        raise exc
+                    try:
+                        row[key] = int(value)
+                    except ValueError as e:
+                        exc = IllegalCharInAnswerException("Error converting value of key %s: %s when unpacking:\n%s" % (key, e, packetString))
+                        self.raiseOnError(exc)
+                        raise exc
+
+        self.raiseOnReceive()
+        return self.lastResult
+
 
     def addOnErrorHandler(self, callback):
         self.receiveHandlers.append(callback)
