@@ -1,20 +1,24 @@
+const int COMMAND_SENSOR_LIST = 1;
+const int COMMAND_ACTOR_LIST = 3;
+const int COMMAND_ACTOR_SET_VALUE = 5;
+
+const int SENSOR_TYPE_HUMIDITY_ANALOG = 0;
+const int SENSOR_TYPE_HUMIDITY_DIGITAL = 1;
+
+
 int led = 2;
 int humidAnalog = 0;
 int humidDigital = 7;
 
 String inputString = "";
-int eof = 90;
+int eof = 'Z';
 
-  
 void setup() {
   // put your setup code here, to run once:
   pinMode(led, OUTPUT);
   pinMode(humidDigital, INPUT);  
- Serial.begin(9600);  
-
+  Serial.begin(9600);  
 }
-
-
 
 void loop() {
 /*  
@@ -80,7 +84,52 @@ void executeCommandID(int commandID, String information){
           Serial.print(inputString); 
           Serial.write ("command: ");          
           Serial.print(commandID);           
+        
+          
+  if (commandID == COMMAND_SENSOR_LIST){
+      executeCommandListSensor();
+  }
+  else if (commandID == COMMAND_ACTOR_LIST){
+      executeCommandListActor();    
+  }
+  else if (commandID == COMMAND_ACTOR_SET_VALUE){
+    
+  }  
 }
+
+void executeCommandListSensor(){
+  Serial.println(COMMAND_SENSOR_LIST+1);
+   
+  int valDigital = digitalRead(humidDigital);   // read the input pin
+  int valAnalog = analogRead(humidAnalog);    // read the input pin
+   
+  printSensorLine(0, valDigital, SENSOR_TYPE_HUMIDITY_DIGITAL, 1);
+  printSensorLine(1, valAnalog, SENSOR_TYPE_HUMIDITY_ANALOG, 1);  
+     
+  Serial.write(eof);
+}
+
+void printSensorLine(int sensorID, int sensorValue, int sensorType, int sensorStatus){
+    Serial.print(sensorID);
+    Serial.write(",");
+    Serial.print(sensorType);
+    Serial.write(",");
+    Serial.print(sensorValue,DEC);
+    Serial.write(",");
+    Serial.print(sensorStatus);  
+    Serial.println(); 
+}
+
+void executeCommandListActor(){
+   Serial.println(COMMAND_ACTOR_LIST+1);  
+   Serial.write(eof);   
+}
+
+void executeCommandSetActor(int actorID, int value){
+   Serial.println(COMMAND_ACTOR_SET_VALUE+1);  
+   Serial.write(eof);   
+}
+
 void writeStringOnSerial(String string){
   char* buf;
   string.toCharArray(buf, string.length()+1); // **CRASH** buf is not allocated!
