@@ -103,7 +103,7 @@ void executeCommandID(int commandID, String information){
 
   Serial.write ("COMMAND: ");          
   Serial.print(commandID);           
-  Serial.write (" (complete: ");          
+  Serial.write (" (string: ");          
   Serial.print(inputString);         
   Serial.write (")");
   
